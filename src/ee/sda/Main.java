@@ -13,12 +13,12 @@ public class Main {
         // Read a file
         // Fix the next line's bug, make it relative Path
         //Path absolutePath = Paths.get("C:/Users/Kasutaja/IdeaProjects/FileReader/src/ee/sda/myFile.txt");
-        Path relativePath = Paths.get("src/ee.sda/myFile.txt");
+        Path relativePath = Paths.get("src/ee/sda/myFile.txt");
 
         List<String> fileLines = new ArrayList<>();
 
         try {
-            fileLines = Files.readAllLines(absolutePath);
+            fileLines = Files.readAllLines(relativePath);
         } catch (IOException e) {
             System.out.println("IOException happened");
         }
