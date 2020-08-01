@@ -22,16 +22,25 @@ public class Main {
             System.out.println("IOException happened");
         }
 
-        // From here you can continue to count the words
+        // From here you can continue to countWords the words
         String takenLine = fileLines.stream().findFirst().get();
         System.out.println(takenLine);
 
-        int count = 0;
+        int countWords = 0;
+        int countDots = 0;
+        int countCommas = 0;
+
         for (int i = 0; i < takenLine.length(); i++) {
             if (takenLine.charAt(i) == ' ') {
-                count++;
+                countWords++;
+            } else if (takenLine.charAt(i) == '.') {
+                countDots++;
+            } else if (takenLine.charAt(i) == ','){
+                countCommas++;
             }
         }
-        System.out.println("Total number of words: " + (count + 1));
+        System.out.println("Total number of words: " + (countWords + 1));
+        System.out.println("Total number of dots: " + countDots);
+        System.out.println("Total number of commas: " + countCommas);
     }
 }
