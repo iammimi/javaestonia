@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) {
         // Read a file
         // Fix the next line's bug, make it relative Path
-        Path absolutePath = Paths.get("C:/Users/Kasutaja/IdeaProjects/FileReader/src/ee/sda/myFile.txt");
+        //Path absolutePath = Paths.get("C:/Users/Kasutaja/IdeaProjects/FileReader/src/ee/sda/myFile.txt");
+        Path relativePath = Paths.get("src/ee.sda/myFile.txt");
 
         List<String> fileLines = new ArrayList<>();
 
@@ -21,6 +22,8 @@ public class Main {
         } catch (IOException e) {
             System.out.println("IOException happened");
         }
+
+
 
         // From here you can continue to countWords the words
         String takenLine = fileLines.stream().findFirst().get();
